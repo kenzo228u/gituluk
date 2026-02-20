@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<title>Салам Дүйнө</title>
+<style>
+body {
+    font-family: Arial;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    text-align: center;
+}
+h1 { margin-top: 20px; }
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+.player {
+    background: rgba(255,255,255,0.1);
+    padding: 10px;
+    border-radius: 10px;
+}
+.player img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+</style>
+</head>
+<body>
+
+<h1>⚽ Салам Дүйнө ⚽</h1>
+<h2>50 Атактуу Футболист</h2>
+
+<div class="gallery" id="gallery"></div>
+
+<script>
+const players = [
+"Lionel Messi",
+"Cristiano Ronaldo",
+"Neymar Jr",
+"Kylian Mbappe",
+"Kevin De Bruyne",
+"Robert Lewandowski",
+"Sergio Ramos",
+"Luka Modric",
+"Karim Benzema",
+"Erling Haaland",
+"Mohamed Salah",
+"Virgil van Dijk",
+"Harry Kane",
+"Antoine Griezmann",
+"Paulo Dybala",
+"Zlatan Ibrahimovic",
+"Manuel Neuer",
+"Toni Kroos",
+"Eden Hazard",
+"Son Heung-min",
+"Luis Suarez",
+"Gerard Pique",
+"Xavi",
+"Andres Iniesta",
+"Gavi",
+"Pedri",
+"Phil Foden",
+"Jude Bellingham",
+"Bukayo Saka",
+"Bernardo Silva",
+"Joao Felix",
+"Angel Di Maria",
+"Alisson Becker",
+"Ederson",
+"Casemiro",
+"Marcus Rashford",
+"Bruno Fernandes",
+"Declan Rice",
+"Rodri",
+"Achraf Hakimi",
+"Romelu Lukaku",
+"Sadio Mane",
+"Didier Drogba",
+"Ronaldinho",
+"Kaka",
+"Rivaldo",
+"David Beckham",
+"Thierry Henry",
+"Francesco Totti",
+"Arjen Robben"
+];
+
+const gallery = document.getElementById("gallery");
+
+players.forEach(name => {
+    const div = document.createElement("div");
+    div.className = "player";
+    div.innerHTML = `
+        <img src="https://source.unsplash.com/300x400/?${encodeURIComponent(name)},football" alt="${name}">
+        <p>${name}</p>
+    `;
+    gallery.appendChild(div);
+});
+</script>
+
+</body>
+</html>
